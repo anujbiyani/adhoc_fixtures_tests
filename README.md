@@ -1,24 +1,10 @@
-# README
+# `AdhocFixtures` Test Pollution Demonstration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Each spec file demonstrates something important to `AdhocFixtures`:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| spec file | purpose |
+|---|---|
+| [before_all_spec.rb](./spec/lib/before_all_spec.rb) | The intended way to use `AdhocFixtures.load` |
+| [before_each_spec.rb](./spec/lib/before_each_spec.rb) | How `before(:each)` creates test pollution |
+| [destroying_works_in_before_each_spec.rb](./spec/lib/destroying_works_in_before_each_spec.rb) | You can use `Class.destroy_all`, but only in a `before(:each)` |
+| [pollution_from_before_all_spec.rb](./spec/lib/pollution_from_before_all_spec.rb) | Even though this is the intended use case, it still creates test pollution |
